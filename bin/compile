@@ -29,4 +29,4 @@ make install 2>&1 | indent
 
 
 echo 'Permission:'
-chmod 755 -r $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
+chmod -R 755 $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
