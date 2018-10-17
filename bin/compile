@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+set -e
+set -o pipefail
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+function indent() {
+  c='s/^/       /'
+  case $(uname) in
+    Darwin) sed -l "$c";;
+    *)      sed -u "$c";;
+  esac
+}
+
+cd $BUILD_DIR/vendor/sctk-2.4.10
+
+# make config
+echo "-----> Compiling with Make: Config"
+make config 2>&1 | indent
+
+echo "-----> make all"
+make all 2>&1 | indent
+
+echo "-----> check with make"
+make check 2>&1 | indent
+
+# make install
+echo "-----> Installing with Make"
+make install 2>&1 | indent

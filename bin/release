@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cat <<EOF
+---
+config_vars:
+PATH: $PATH:/app/vendor/sctk-2.4.10/bin
+EOF
