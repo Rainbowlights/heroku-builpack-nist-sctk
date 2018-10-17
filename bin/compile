@@ -25,7 +25,7 @@ echo "-----> make all"
 make all 2>&1 | indent
 
 echo "-----> check with make"
-make check 2>&1 | indent
+#make check 2>&1 | indent
 
 # make install
 echo "-----> Installing with Make"
