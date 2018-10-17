@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 echo "sctk-2.4.10"
-exit 0
+if [ -f $1/vendor/sctk-2.4.10/makefile ]; then
+  echo "..."
+  exit 0
+else
+  exit 1
+fi
