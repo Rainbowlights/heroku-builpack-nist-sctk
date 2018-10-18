@@ -32,8 +32,7 @@ echo 'Permission:'
 chmod -R 755 $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
 
 echo 'Installing virtualenv'
-apt-get install python3-pip | indent
-pip3 install virtualenv | indent
+pip install virtualenv | indent
 virtualenv -p /usr/bin/python3.6 msenv | indent
 echo 'Activate virtualenv'
 source msenv/bin/activate | indent
