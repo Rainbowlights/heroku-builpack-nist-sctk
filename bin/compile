@@ -32,6 +32,7 @@ echo 'Permission:'
 chmod -R 755 $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
 
 echo 'Installing virtualenv'
+export PYTHONHOME=/usr/local/lib/python3.6/  | indent
 virtualenv -p /usr/bin/python3.6 msenv | indent
 echo 'Activate virtualenv'
 source msenv/bin/activate | indent
@@ -40,3 +41,4 @@ cd $BUILD_DIR/lib/msspeech-client
 python setup.py install | indent
 echo "Deactivate msenv"
 deactivate | indent
+export PYTHONHOME=/app/.heroku/python | indent
