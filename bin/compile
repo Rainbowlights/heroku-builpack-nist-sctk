@@ -30,3 +30,13 @@ make install 2>&1 | indent
 
 echo 'Permission:'
 chmod -R 755 $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
+
+echo 'Installing virtualenv'
+virtualenv -p /usr/bin/python3.6 msenv | indent
+echo 'Activate virtualenv'
+source msenv/bin/activate | indent
+echo 'Installing script python3.6'
+cd $BUILD_DIR/lib/msspeech-client
+python setup.py install | indent
+echo "Deactivate msenv"
+deactivate | indent
