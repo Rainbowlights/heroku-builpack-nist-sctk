@@ -38,7 +38,7 @@ echo 'Activate virtualenv'
 source msenv/bin/activate | indent
 echo 'Installing script python3.6'
 cd $BUILD_DIR/lib/msspeech-client
-python setup.py install | indent
+python3 setup.py install | indent
 echo "Deactivate msenv"
 deactivate | indent
 export PYTHONHOME=/app/.heroku/python | indent
