@@ -30,18 +30,3 @@ make install 2>&1 | indent
 
 echo 'Permission:'
 chmod -R 755 $BUILD_DIR/vendor/sctk-2.4.10/bin/ | indent
-
-echo 'Installing virtualenv'
-pip install virtualenv | indent
-export PYTHONHOME=/usr/lib/python3.6/  | indent
-export PYTHONPATH=/usr/lib/python3.6/  | indent
-virtualenv -p python3.6 msenv | indent
-echo 'Activate virtualenv'
-source msenv/bin/activate | indent
-echo 'Installing script python3.6'
-cd $BUILD_DIR/lib/msspeech-client
-python setup.py install | indent
-echo "Deactivate msenv"
-deactivate | indent
-export PYTHONHOME=/app/.heroku/python  | indent
-export PYTHONPATH=/app/.heroku/python  | indent
