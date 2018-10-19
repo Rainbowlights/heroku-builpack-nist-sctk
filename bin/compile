@@ -35,7 +35,7 @@ echo 'Installing virtualenv'
 pip install virtualenv | indent
 export PYTHONHOME=/usr/lib/python3.6/  | indent
 export PYTHONPATH=/usr/lib/python3.6/  | indent
-virtualenv -p /usr/lib/python3.6 msenv | indent
+virtualenv -p python3.6 msenv | indent
 echo 'Activate virtualenv'
 source msenv/bin/activate | indent
 echo 'Installing script python3.6'
